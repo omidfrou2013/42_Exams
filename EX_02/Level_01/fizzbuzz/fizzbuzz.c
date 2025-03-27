@@ -12,9 +12,8 @@ void	ft_putnbr(int n)
 
 int	main(void)
 {
-	int	number;
+	int	number = 1;
 
-	number = 1;
 	while (number <= 100)
 	{
 		if (number % 15 == 0)
