@@ -13,6 +13,7 @@ int		main(int ac, char **av)
 	{
 		while (av[1][i])
 		{
+			i2 = 0;
 			while (av[2][i2])
 			{
 				if (av[1][i] == av[2][i2])
@@ -24,7 +25,7 @@ int		main(int ac, char **av)
 			}
 			i++;
 		}
-		if (av[1][count] == '\0')
+		if (count == i)
 			write(1, "1", 1);
 		else
 			write(1, "0", 1);
