@@ -2,9 +2,7 @@
 
 void	ft_putstr(char *str)
 {
-	int i;
-
-	i = 0;
+	int i = 0;
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);
@@ -14,9 +12,7 @@ void	ft_putstr(char *str)
 
 int		ft_strlen(char *str)
 {
-	int i;
-
-	i = 0;
+	int i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
@@ -28,24 +24,22 @@ int		main(int ac, char **av)
 	int j;
 	int wdlen;
 
-	i = 0;
-	j = 0;
-	wdlen = 0;
 	if (ac == 3)
 	{
-		while (av[1][i] != '\0')
+		i = 0;
+		j = 0;
+		wdlen = 0;
+
+		while (av[2][j] != '\0' && av[1][i] != '\0')
 		{
-			while (av[2][j] != '\0')
+			if (av[1][i] == av[2][j])
 			{
-				if (av[1][i] == av[2][j])
-				{
-					wdlen++;
-					break ;
-				}
-				j++;
+				wdlen++;
+				i++;
 			}
-			i++;
+			j++;
 		}
+
 		if (wdlen == ft_strlen(av[1]))
 			ft_putstr(av[1]);
 	}
